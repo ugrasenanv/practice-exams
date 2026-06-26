@@ -1,0 +1,70 @@
+<!-- Apple Touch Icon 180x180 -->
+<svg width="180" height="180" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradientApple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadowApple" x="-50%" y="-50%" width="200%" height="200%">
+      <dropShadow dx="1" dy="1" stdDeviation="2" flood-color="rgba(0,0,0,0.2)"/>
+    </filter>
+  </defs>
+  
+  <!-- Background with iOS rounded corners -->
+  <rect width="180" height="180" rx="20" fill="url(#bgGradientApple)"/>
+  
+  <!-- Main Content -->
+  <g transform="translate(30, 30)">
+    <!-- Book Base -->
+    <rect x="20" y="45" width="80" height="75" rx="6" fill="white" opacity="0.95" filter="url(#shadowApple)"/>
+    <rect x="25" y="50" width="70" height="65" rx="4" fill="white"/>
+    
+    <!-- Book Binding -->
+    <rect x="58" y="50" width="4" height="65" fill="#667eea"/>
+    
+    <!-- Left Page Content -->
+    <line x1="30" y1="60" x2="50" y2="60" stroke="#667eea" stroke-width="2"/>
+    <line x1="30" y1="70" x2="48" y2="70" stroke="#667eea" stroke-width="1.5"/>
+    <line x1="30" y1="80" x2="50" y2="80" stroke="#667eea" stroke-width="1.5"/>
+    <line x1="30" y1="90" x2="45" y2="90" stroke="#667eea" stroke-width="1.5"/>
+    <line x1="30" y1="100" x2="50" y2="100" stroke="#667eea" stroke-width="1.5"/>
+    
+    <!-- Right Page Content -->
+    <line x1="70" y1="60" x2="90" y2="60" stroke="#764ba2" stroke-width="2"/>
+    <line x1="70" y1="70" x2="88" y2="70" stroke="#764ba2" stroke-width="1.5"/>
+    <line x1="70" y1="80" x2="90" y2="80" stroke="#764ba2" stroke-width="1.5"/>
+    <line x1="70" y1="90" x2="85" y2="90" stroke="#764ba2" stroke-width="1.5"/>
+    <line x1="70" y1="100" x2="90" y2="100" stroke="#764ba2" stroke-width="1.5"/>
+    
+    <!-- AI Brain -->
+    <circle cx="60" cy="25" r="15" fill="#667eea" opacity="0.9"/>
+    <circle cx="60" cy="25" r="12" fill="white" opacity="0.9"/>
+    
+    <!-- Brain Pattern -->
+    <path d="M 50 20 Q 55 15 60 20 Q 65 15 70 20 Q 70 25 65 30 Q 60 35 55 30 Q 50 35 45 30 Q 45 25 50 20" 
+          fill="#667eea" opacity="0.8"/>
+    <path d="M 52 22 Q 56 18 60 22 Q 64 18 68 22 Q 68 28 64 32 Q 60 36 56 32 Q 52 36 48 32 Q 48 28 52 22" 
+          fill="white" opacity="0.9"/>
+    
+    <!-- Neural Network Lines -->
+    <g stroke="#764ba2" stroke-width="1.5" opacity="0.6" fill="none">
+      <line x1="54" y1="22" x2="60" y2="25"/>
+      <line x1="60" y1="25" x2="66" y2="22"/>
+      <line x1="56" y1="30" x2="64" y2="28"/>
+    </g>
+    
+    <!-- AI Sparkles -->
+    <circle cx="35" cy="10" r="2" fill="#FFD700"/>
+    <circle cx="85" cy="15" r="1.5" fill="#FFD700"/>
+    <circle cx="30" cy="35" r="1" fill="#FFD700"/>
+    <circle cx="90" cy="30" r="1.5" fill="#FFD700"/>
+    
+    <!-- Tech Elements -->
+    <g stroke="white" stroke-width="1" opacity="0.3" fill="none">
+      <line x1="10" y1="10" x2="25" y2="10"/>
+      <line x1="95" y1="12" x2="110" y2="12"/>
+      <line x1="12" y1="110" x2="27" y2="110"/>
+      <line x1="93" y1="112" x2="108" y2="112"/>
+    </g>
+  </g>
+</svg>

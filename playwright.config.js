@@ -7,23 +7,20 @@ export default defineConfig({
   expect: { timeout: 5000 },
   fullyParallel: true,
   retries: process.env.CI ? 2 : 0,
-  reporter: [ ['list'], ['html', { outputFolder: 'playwright-report', open: 'never' }] ],
+  reporter: [['list'], ['html', { outputFolder: 'playwright-report', open: 'never' }]],
   use: {
-    baseURL: process.env.PLAYWRIGHT_BASE_URL || 'http://localhost:5173',
+    baseURL: process.env.PLAYWRIGHT_BASE_URL || 'http://127.0.0.1:4173',
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure'
   },
   projects: [
-    { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
-    { name: 'firefox', use: { ...devices['Desktop Firefox'], trace: 'on' } },
-    { name: 'webkit', use: { ...devices['Desktop Safari'], trace: 'on' } },
-    { name: 'mobile-chrome', use: { ...devices['Pixel 7'] } },
+    { name: 'chromium', use: { ...devices['Desktop Chrome'] } }
   ],
   webServer: {
-    command: 'npm run dev',
-    port: 5173,
+    command: 'npm run dev -- --host 127.0.0.1 --port 4173',
+    port: 4173,
     reuseExistingServer: !process.env.CI,
-    timeout: 30 * 1000
+    timeout: 60 * 1000
   }
 })

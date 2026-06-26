@@ -1,50 +1,58 @@
 import '@testing-library/jest-dom';
+import { afterEach, beforeEach, vi } from 'vitest';
 
-// Mock localStorage
-const localStorageMock = {
-  getItem: jest.fn(),
-  setItem: jest.fn(),
-  removeItem: jest.fn(),
-  clear: jest.fn(),
-  key: jest.fn(),
+const createStorageMock = () => ({
+  getItem: vi.fn(),
+  setItem: vi.fn(),
+  removeItem: vi.fn(),
+  clear: vi.fn(),
+  key: vi.fn(),
   length: 0
-};
-global.localStorage = localStorageMock;
+});
 
-// Mock sessionStorage
-const sessionStorageMock = {
-  getItem: jest.fn(),
-  setItem: jest.fn(),
-  removeItem: jest.fn(),
-  clear: jest.fn(),
-  key: jest.fn(),
-  length: 0
-};
-global.sessionStorage = sessionStorageMock;
+const localStorageMock = createStorageMock();
+const sessionStorageMock = createStorageMock();
 
-// Mock window.matchMedia
+Object.defineProperty(window, 'localStorage', {
+  configurable: true,
+  value: localStorageMock
+});
+
+Object.defineProperty(window, 'sessionStorage', {
+  configurable: true,
+  value: sessionStorageMock
+});
+
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
-  value: jest.fn().mockImplementation(query => ({
+  value: vi.fn().mockImplementation((query) => ({
     matches: false,
     media: query,
     onchange: null,
-    addListener: jest.fn(), // deprecated
-    removeListener: jest.fn(), // deprecated
-    addEventListener: jest.fn(),
-    removeEventListener: jest.fn(),
-    dispatchEvent: jest.fn(),
-  })),
+    addListener: vi.fn(),
+    removeListener: vi.fn(),
+    addEventListener: vi.fn(),
+    removeEventListener: vi.fn(),
+    dispatchEvent: vi.fn()
+  }))
 });
 
-// Mock Date.now for consistent timing tests
-const mockDateNow = jest.spyOn(Date, 'now');
+const mockDateNow = vi.spyOn(Date, 'now');
+
 beforeEach(() => {
-  mockDateNow.mockReturnValue(1609459200000); // 2021-01-01 00:00:00 UTC
-  localStorage.clear();
-  sessionStorage.clear();
+  mockDateNow.mockReturnValue(1609459200000);
+  localStorageMock.getItem.mockReset();
+  localStorageMock.setItem.mockReset();
+  localStorageMock.removeItem.mockReset();
+  localStorageMock.clear.mockReset();
+  localStorageMock.key.mockReset();
+  sessionStorageMock.getItem.mockReset();
+  sessionStorageMock.setItem.mockReset();
+  sessionStorageMock.removeItem.mockReset();
+  sessionStorageMock.clear.mockReset();
+  sessionStorageMock.key.mockReset();
 });
 
 afterEach(() => {
-  jest.clearAllMocks();
+  vi.clearAllMocks();
 });

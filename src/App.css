@@ -466,6 +466,62 @@ body {
   color: white;
 }
 
+/* Certification Readiness */
+.readiness-card {
+  max-width: 1200px;
+  margin: 2rem auto 0;
+  padding: 1.25rem 1.5rem;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(14, 165, 233, 0.08));
+  box-shadow: var(--shadow-md);
+}
+
+.readiness-card-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+}
+
+.readiness-eyebrow {
+  margin: 0 0 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.readiness-score {
+  min-width: 72px;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.readiness-copy {
+  margin: 0.75rem 0 0;
+  color: var(--text-secondary);
+}
+
+.readiness-pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+}
+
+.readiness-pill {
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.12);
+  color: var(--primary-color);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
 /* Features Grid */
 .features {
   display: grid;

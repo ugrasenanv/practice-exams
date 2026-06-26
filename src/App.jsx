@@ -20,6 +20,7 @@ import TimingAnalyticsPage from './components/shared/TimingAnalyticsPage.jsx'
 import AdvancedDashboard from './components/analytics/AdvancedDashboard.jsx'
 import StudyMaterials from './StudyMaterials.jsx'
 import HamburgerMenu from './components/navigation/HamburgerMenu.jsx'
+import { buildReadinessSummary } from './utils/certificationReadiness.js'
 import './App.css'
 import './pwa-styles.css'
 
@@ -46,7 +47,7 @@ function App() {
 
 function AppContent() {
   const { theme, setLightTheme, setDarkTheme, autoShowExplanation, setAutoShowExplanation } = useTheme()
-  const { achievements, getNewAchievements } = useProgress()
+  const { achievements, getNewAchievements, sessionHistory } = useProgress()
   const [currentPage, setCurrentPage] = useState('home')
   const [studyExamType, setStudyExamType] = useState('AB-730')
   const [achievementNotification, setAchievementNotification] = useState(null)
@@ -201,6 +202,11 @@ function AppContent() {
   const goBackToAI900 = () => {
     setCurrentPage('ai900')
   }
+
+  const readinessSummary = buildReadinessSummary({
+    sessions: sessionHistory.slice(0, 5),
+    focusAreas: ['Prompt Engineering', 'Responsible AI', 'Azure AI Services']
+  })
 
   // AB-730 Exam Page
   if (currentPage === 'ab730') {
@@ -741,6 +747,22 @@ function AppContent() {
                 </button>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div className="readiness-card" role="status">
+          <div className="readiness-card-header">
+            <div>
+              <p className="readiness-eyebrow">Certification readiness</p>
+              <h2>{readinessSummary.label}</h2>
+            </div>
+            <div className="readiness-score">{readinessSummary.score}%</div>
+          </div>
+          <p className="readiness-copy">{readinessSummary.nextStep}</p>
+          <div className="readiness-pill-row">
+            {readinessSummary.focusAreas.map((area) => (
+              <span key={area} className="readiness-pill">{area}</span>
+            ))}
           </div>
         </div>
 

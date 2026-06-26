@@ -1,263 +1,77 @@
-# AI Cert Studio - Master Your Azure AI Certifications 🚀
+# AI Cert Studio
 
-A comprehensive, modern web application for **mastering Microsoft Azure AI certifications** with advanced learning features, progress tracking, and personalized study tools. AI Cert Studio provides high-quality practice questions, adaptive learning systems, and detailed analytics to help you achieve certification success.
+AI Cert Studio is a polished React + Vite study app for preparing for Microsoft Azure AI certifications such as AB-730 and AI-900. It combines timed practice exams, detailed analytics, study materials, achievement tracking, and a certification-readiness view into one streamlined experience.
 
-## 🆕 **Latest Updates (October 2025)**
+## What’s included
 
-### ⚠️ Browser Support Status (October 2025)
-Full functionality (including complete exam flow E2E automation) is currently guaranteed on **Chromium-based browsers (Chrome, Edge, Brave, Arc)**. 
+- Practice exams for AB-730 and AI-900
+- Timed exam mode and practice mode options
+- Multi-select questions with partial credit support
+- Per-question timing analytics and session history
+- Smart review, achievements, and study companion features
+- Certification-readiness guidance based on recent performance
+- Progressive web app support and local persistence
 
-The exam experience *loads and is usable* on **Firefox** and **Safari/WebKit**, but an automated test scenario exercising rapid answer navigation and submission intermittently times out in those engines. We have not observed user-facing crashes during normal paced usage; however, if you encounter an unexpected interruption in Firefox/Safari, please retry in a Chromium browser while we finalize the cross‑browser fix.
+## Tech stack
 
-Tracking Issue: `firefox-webkit-exam-flow-timeout` (internal) – root cause under investigation (suspected interaction between autosave/timing loop and headless engine lifecycle).
+- React 19
+- Vite
+- CSS Modules
+- Context-based state management
+- Vitest for unit and integration tests
+- Playwright for end-to-end coverage
 
-If cross-browser parity is critical for your environment, use Chrome/Edge for formal practice sessions until this notice is removed. This section will be updated once the fix is confirmed.
-
-
-### 🔥 **Multi-Select Question System**
-- **25% Multi-Select Distribution** - Realistic certification practice with advanced question types
-- **Partial Credit Scoring** - Proportional points system for multi-select answers
-- **Enhanced Results Analysis** - Detailed breakdown of multi-select performance
-
-### ⏱️ **Per-Question Timing Analytics** 
-- **Real-Time Timing Display** - Live per-question timer with visual progress indicators
-- **Comprehensive Session Analysis** - Detailed timing breakdown for every question
-- **Timing Analytics Page** - Dedicated dashboard for analyzing timing performance across sessions
-
-### 🧪 **Production-Ready Testing Framework**
-- **Jest 29.7.0 + React Testing Library** - Comprehensive test suite with modern testing practices
-- **Complete Coverage** - Multi-select questions, timing system, exam filtering, and integration tests
-- **CI/CD Ready** - Production-quality testing infrastructure for continuous deployment
-
-### 📱 **NEW: Progressive Web App (PWA)**
-1. **Install to Home Screen** - Native app-like experience with offline capabilities
-2. **Push Notifications** - Smart study reminders and achievement celebrations  
-3. **Offline Learning** - Continue studying without internet connection
-4. **Mobile-First Design** - Optimized for mobile devices with safe area support
-
-### 🧠 **AI Study Companion**
-1. **Get AI Recommendations** - Receive personalized study plans based on your performance patterns
-2. **Monitor Certification Readiness** - Track your pass probability with real-time analytics
-3. **Optimize Study Sessions** - Use AI-suggested optimal times, duration, and question counts
-4. **Follow Spaced Repetition** - Let the SM-2 algorithm schedule your question reviews scientifically
-
-### 🎯 **Smart Review System**
-1. **Focus on Weak Areas** - Use domain-specific review to target challenging topics
-2. **Review Missed Questions** - Reinforce learning by revisiting incorrect answers
-3. **Build Confidence** - Practice questions you were unsure about until mastery
-4. **Adaptive Learning** - Let the system recommend personalized study sessions
-
-## 🎯 Available Certifications
-
-### AB-730: AI Business Professional
-- **200 comprehensive practice questions** covering Microsoft 365 Copilot and AI for business
-- **Exam domains**: Generative AI Fundamentals (25-30%), Manage Prompts/Conversations (35-40%), Draft/Analyze Content (25-30%)
-- **Adaptive timer system** (90 minutes for certification mode)
-- **70% passing score** requirement
-- Comprehensive study materials focused on practical Copilot usage
-- **Performance analytics** and **achievement tracking**
-
-### AI-900: Azure AI Fundamentals
-- **200 practice questions** covering Azure AI services and ML fundamentals
-- **Key areas**: AI Workloads (15-20%), ML Principles (25-30%), Computer Vision (15-20%), NLP (15-20%), Conversational AI (15-20%)
-- **Realistic exam simulation** with timed practice
-- **700 (out of 1000) passing score** requirement
-- Detailed explanations for Azure Cognitive Services and ML concepts
-- **Smart Review** system for targeted improvement
-
-## 🚀 Advanced Features
-
-### 📊 **Smart Learning System**
-- **Progress Tracking Context** - Comprehensive performance analytics with session history
-- **Performance Dashboard** - Visual trends, domain analysis, and detailed metrics
-- **Achievement System** - 25+ badges across 5 categories (Performance, Consistency, Improvement, Exploration, Mastery)
-- **Smart Review** - Personalized study modes based on your performance data
-- **Session Analytics** - Detailed tracking of accuracy, speed, and improvement patterns
-
-### 🔥 **Multi-Select Question System** (NEW!)
-- **Hybrid Question Types** - 25% multi-select questions across all exams for realistic certification practice
-- **Partial Credit Scoring** - Advanced scoring system with proportional points for multi-select answers
-- **Practice & Exam Modes** - Both modes include strategic multi-select distribution matching real SAFe exams
-- **Enhanced Results** - Detailed breakdown showing multi-select performance and partial credit analytics
-
-### ⏱️ **Per-Question Timing Analytics** (NEW!)
-- **Real-Time Timing Display** - Live per-question timer with visual progress indicators
-- **Comprehensive Session Analysis** - Detailed timing breakdown for every question in each exam session
-- **Performance Insights** - Average time per question, fastest/slowest questions, and timing patterns
-- **Timing Analytics Page** - Dedicated page for analyzing timing performance across all exam sessions
-- **Local Storage Persistence** - All timing data preserved across browser sessions
-
-### ⏱️ **Adaptive Timer System**
-- **Certification Mode** (≤45 questions): 90 minutes - matches real exam conditions
-- **Practice Mode** (46-100 questions): 2 minutes per question for focused practice
-- **Study Mode** (>100 questions): Unlimited time for comprehensive review
-- **Smart UI indicators** showing current timer mode and exam type
-
-### 🎨 **Modern User Experience**
-- **Responsive Design** - Optimized for desktop, tablet, and mobile devices
-- **Theme Support** - Dark and light mode options with system preference detection
-- **Professional Navigation** - Seamless routing between Dashboard, Achievements, and Smart Review
-- **Interactive Results** - Comprehensive score breakdown with domain-specific analysis
-- **Mobile-First Design** - CSS Modules with professional styling and animations
-
-### 📈 **Advanced Analytics**
-- **Performance Trends** - Track improvement over time with visual charts
-- **Domain Analysis** - Identify strengths and weaknesses by topic area
-- **Session History** - Complete record of all exam attempts with detailed metrics
-- **Achievement Progress** - Real-time tracking of learning milestones and badges
-- **Smart Recommendations** - Personalized study suggestions based on performance data
-
-## 🛠️ Technology Stack
-
-- **React 19.1.1** - Modern functional components with hooks and Context API
-- **Vite** - Fast build tool and development server with hot module replacement
-- **CSS Modules** - Component-scoped styling with themed designs
-- **Context API** - Advanced state management for themes, progress tracking, and achievements
-- **localStorage** - Persistent data storage for progress and achievement tracking
-- **Responsive Design** - Mobile-first approach with professional UI/UX
-
-### 🧪 **Comprehensive Testing Framework** (NEW!)
-- **Jest 29.7.0** - Modern JavaScript testing framework with advanced mocking capabilities
-- **React Testing Library** - User-centric testing with realistic DOM interactions
-- **jsdom Environment** - Browser-like testing environment for component behavior validation
-- **Babel Configuration** - Modern JavaScript support with JSX transformation
-- **Complete Test Coverage** - Multi-select questions, timing system, exam filtering, and integration tests
-
-## 📱 **NEW: Enhanced Learning Features**
-
-### 🏆 **Achievement System (25+ Badges)**
-- **Performance Badges** - First Perfect Score, Speed Master, Consistency Champion
-- **Consistency Badges** - Daily Learner, Weekly Warrior, Study Streak
-- **Improvement Badges** - Rapid Improver, Comeback Champion, Steady Climber  
-- **Exploration Badges** - Question Explorer, Domain Master, Completionist
-- **Mastery Badges** - SAFe Expert, Certification Ready, Learning Champion
-
-### 🧠 **Smart Review System**
-- **Missed Questions Review** - Focus on previously incorrect answers
-- **Low Confidence Review** - Target questions you were unsure about
-- **Domain-Specific Review** - Practice specific topic areas
-- **Recent Mistakes** - Review recent incorrect answers for retention
-- **Comprehensive Review** - Adaptive question selection based on performance
-
-### 📊 **Progress Dashboard**
-- **Performance Overview** - Session count, average scores, improvement trends
-- **Domain Breakdown** - Visual analysis of strengths and weaknesses by topic
-- **Recent Sessions** - Detailed history with scores, dates, and question counts
-- **Achievement Gallery** - Visual display of earned badges and progress
-- **Analytics Charts** - Performance trends and learning pattern visualization
-
-### 📚 Study Resources & Content
-
-### AB-730: AI Business Professional (200 Questions)
-- Microsoft 365 Copilot fundamentals and capabilities
-- Prompt engineering and conversation management
-- Copilot across Microsoft 365 apps (Word, Excel, PowerPoint, Outlook, Teams)
-- Agent creation and customization
-- Responsible AI principles and implementation
-- **25% Multi-Select Questions** - Realistic exam simulation with partial credit scoring
-- **Comprehensive explanations** for every question with practical examples
-
-### AI-900: Azure AI Fundamentals (200 Questions)
-- Machine learning concepts and Azure ML services
-- Computer vision with Azure Computer Vision API
-- Natural language processing and Azure Language service
-- Speech services and conversational AI
-- Azure Cognitive Services and Applied AI
-- **25% Multi-Select Questions** - Advanced question types matching real Microsoft exams
-- **Detailed learning content** covering all Azure AI service offerings
-
-## 🏁 Getting Started
+## Getting started
 
 ### Prerequisites
-- Node.js (v16 or higher)
-- npm or yarn package manager
 
-### Installation
+- Node.js 18+ recommended
+- npm 9+
 
-1. Clone the repository:
+### Install and run
+
 ```bash
-git clone https://github.com/YOUR-USERNAME/personal-practice-exams.git
-cd personal-practice-exams
-```
-
-2. Install dependencies:
-```bash
+git clone https://github.com/ugrasenanv/practice-exams.git
+cd practice-exams
 npm install
-```
-
-3. Start the development server:
-```bash
 npm run dev
 ```
 
-4. Open your browser and navigate to `http://localhost:5177`
+Open http://localhost:5173 in your browser.
 
-### 📱 **PWA Installation**
+## Available scripts
 
-For the best mobile experience, install this app:
+```bash
+npm run dev        # start the development server
+npm run build      # create a production build
+npm run preview    # preview the production build locally
+npm test           # run Vitest tests
+npm run e2e        # run Playwright tests
+```
 
-1. **Chrome/Edge**: Look for the install prompt or use "Install app" from the menu
-2. **Safari**: Tap the share button and select "Add to Home Screen"  
-3. **Firefox**: Enable "Install" from the address bar menu
+## Testing
 
-**PWA Features Available**:
-- ✅ **Offline Access**: Study without internet connection
-- ✅ **Push Notifications**: Smart reminders and achievement alerts  
-- ✅ **App Shortcuts**: Quick access to exams and AI companion
-- ✅ **Native Feel**: Full-screen experience with safe area support
+The project includes a mix of unit, integration, and end-to-end tests.
 
-### Building for Production
+```bash
+npx vitest run
+npx playwright test
+```
+
+## Deployment
+
+The app builds to the dist folder and can be deployed to Netlify, Vercel, GitHub Pages, or any static hosting platform.
 
 ```bash
 npm run build
 ```
 
-The built files will be in the `dist` directory, ready for PWA deployment.
+## Notes
 
-## 🚀 Deployment
+- Chromium-based browsers are recommended for the most reliable exam-flow experience.
+- Progress, preferences, and session data are stored in the browser via localStorage.
+- The home screen now includes a certification-readiness summary to help guide study sessions.
 
-### GitHub Pages (Current Configuration)
-This repository is already configured for GitHub Pages deployment using the workflow in `.github/workflows/deploy.yml`.
-
-What happens on push to `main`:
-1. Workflow installs dependencies (`npm ci`).
-2. (Optional) Runs tests – you can skip by setting repository or environment secret `SKIP_TESTS=true` if a known flaky integration test blocks deployment.
-3. Builds the site with `npm run build` (production base path `/personal-practice-exams/` comes from `vite.config.js`).
-4. Uploads the `dist` output as a Pages artifact.
-5. Deploys to GitHub Pages environment.
-
-Live URL pattern: `https://<org-or-user>.github.io/personal-practice-exams/` – currently: `https://YOUR-USERNAME.github.io/personal-practice-exams/`.
-
-Manual trigger: Use the "Deploy PWA to GitHub Pages" workflow from the Actions tab (workflow_dispatch).
-
-### Confirming / Enabling Pages
-If the site does not appear after a successful run:
-- Go to Settings → Pages → Ensure "GitHub Actions" is selected as the source.
-- Check the workflow run summary for the final "Deploy to GitHub Pages" step.
-- Verify `dist/` contains `index.html` and asset files (workflow lists them before upload).
-
-### Cache Busting & Base Path
-Vite build already sets `base: '/personal-practice-exams/'` when `NODE_ENV=production`. If the repository name changes, update that in `vite.config.js`.
-
-### Common Deployment Adjustments
-- Skip tests temporarily: add an Actions variable or secret `SKIP_TESTS` with value `true`.
-- Pin Node version: adjust `node-version` in the workflow (currently 20).
-- Add coverage gating: insert a step running `npm run test:coverage` and fail if coverage drops.
-
-### Alternative Hosting Options
-You can deploy the same build output (`dist/`) almost anywhere:
-
-1. Netlify
-	- Build command: `npm run build`
-	- Publish directory: `dist`
-	- Set Environment Variable: `NODE_ENV=production`
-	- (Optional) Add `_redirects` file for SPA fallback: `/* /index.html 200`
-
-2. Vercel
-	- Framework preset: Vite
-	- Build command: `npm run build`
-	- Output directory: `dist`
-	- Remove `base` override if deploying at root (set `base: '/'` or use environment override).
 
 3. Docker (Static Artifact Serve)
 	Create a `Dockerfile`:

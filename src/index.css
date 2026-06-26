@@ -1,0 +1,14 @@
+/* Basic Reset - Let App.css handle the styling */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}

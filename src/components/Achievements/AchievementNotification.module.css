@@ -1,0 +1,161 @@
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 320px;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transform: translateX(100%);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.notification::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #fbbf24, #f59e0b);
+  animation: progressBar 4s linear;
+}
+
+@keyframes progressBar {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.notification.show {
+  transform: translateX(0);
+  animation: slideInBounce 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideInBounce {
+  0% {
+    transform: translateX(100%);
+  }
+  60% {
+    transform: translateX(-10px);
+  }
+  80% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.notificationContent {
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  position: relative;
+}
+
+.notificationIcon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+.notificationText {
+  flex: 1;
+  min-width: 0;
+}
+
+.notificationText h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+}
+
+.notificationText p {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin: 0 0 0.25rem 0;
+}
+
+.description {
+  font-size: 0.75rem;
+  opacity: 0.9;
+  line-height: 1.3;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 300;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.closeButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .notification {
+    width: calc(100vw - 40px);
+    right: 20px;
+    left: 20px;
+  }
+
+  .notificationContent {
+    padding: 0.875rem 1rem;
+  }
+
+  .notificationIcon {
+    font-size: 1.75rem;
+  }
+
+  .notificationText h3 {
+    font-size: 0.875rem;
+  }
+
+  .notificationText p {
+    font-size: 0.8125rem;
+  }
+
+  .description {
+    font-size: 0.6875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .notification {
+    width: calc(100vw - 20px);
+    right: 10px;
+    left: 10px;
+    top: 10px;
+  }
+}

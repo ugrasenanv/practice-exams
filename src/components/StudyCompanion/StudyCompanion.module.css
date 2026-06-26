@@ -1,0 +1,867 @@
+/* Study Companion Styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.headerActions {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+.backButton {
+  background: #f7fafc;
+  color: #4a5568;
+  border: 1px solid #e2e8f0;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.backButton:hover {
+  background: #edf2f7;
+  color: #2d3748;
+  transform: translateY(-1px);
+}
+
+.header h2 {
+  color: #2d3748;
+  margin: 0 0 0.5rem 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.header p {
+  color: #718096;
+  margin: 0 0 1rem 0;
+  font-size: 1.2rem;
+}
+
+.analysisConfidence {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Loading State */
+.loadingState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  text-align: center;
+  background: white;
+  border-radius: 16px;
+  padding: 3rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #e2e8f0;
+  border-top: 4px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1.5rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loadingState h3 {
+  color: #2d3748;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+}
+
+.loadingState p {
+  color: #718096;
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Empty State */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  text-align: center;
+  background: white;
+  border-radius: 16px;
+  padding: 3rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.emptyIcon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.emptyState h3 {
+  color: #2d3748;
+  margin: 0 0 1rem 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.emptyState p {
+  color: #718096;
+  margin: 0 0 2rem 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 400px;
+}
+
+.startButton {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3);
+}
+
+.startButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+}
+
+/* Tab Navigation */
+.tabNavigation {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  background: white;
+  border-radius: 50px;
+  padding: 0.5rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+.tabButton {
+  flex: 1;
+  min-width: 140px;
+  padding: 1rem 1.5rem;
+  background: transparent;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #718096;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.tabButton:hover {
+  color: #4a5568;
+  background: #f7fafc;
+}
+
+.tabButton.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3);
+}
+
+/* Tab Content */
+.tabContainer {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.tabContent {
+  min-height: 400px;
+}
+
+/* Metrics Grid */
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.metricCard {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.metricCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.primaryCard {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  grid-column: span 2;
+}
+
+.metricHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.metricIcon {
+  font-size: 1.5rem;
+}
+
+.metricHeader h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: inherit;
+}
+
+.metricValue {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.percentage {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.confidence {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  font-weight: 500;
+}
+
+.velocity {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #48bb78;
+}
+
+.efficiency {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ed8936;
+}
+
+.efficiencyUnit {
+  font-size: 0.9rem;
+  color: #718096;
+  margin-left: 0.5rem;
+}
+
+.metricDetails p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.timeEstimate {
+  margin-top: 0.5rem !important;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.9rem;
+}
+
+/* Recommended Action */
+.recommendedAction {
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.recommendedAction h4 {
+  margin: 0 0 1rem 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.recommendedAction p {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.actionButton {
+  background: white;
+  color: #38a169;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.actionButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Recommendations Tab */
+.recommendationsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.recommendationCard {
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.recommendationCard h4 {
+  margin: 0 0 1rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.scheduleDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.scheduleItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.scheduleLabel {
+  color: #718096;
+  font-weight: 500;
+}
+
+.scheduleValue {
+  color: #2d3748;
+  font-weight: 600;
+}
+
+.focusAreas {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.focusArea {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.focusRank {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.focusName {
+  font-weight: 500;
+  color: #2d3748;
+}
+
+.sessionType {
+  text-align: center;
+}
+
+.sessionTypeTag {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.sessionDescription {
+  color: #718096;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.spacedRepetition {
+  text-align: center;
+}
+
+.repetitionStats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+}
+
+.repetitionStat {
+  text-align: center;
+}
+
+.statValue {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #667eea;
+}
+
+.statLabel {
+  font-size: 0.85rem;
+  color: #718096;
+}
+
+.reviewButton {
+  background: linear-gradient(135deg, #ed8936 0%, #dd6b20 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.reviewButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(237, 137, 54, 0.3);
+}
+
+/* Insights Tab */
+.insightsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.insightCard {
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  text-align: center;
+}
+
+.insightCard h4 {
+  margin: 0 0 1rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.prediction {
+  text-align: center;
+}
+
+.predictionValue {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #667eea;
+  line-height: 1;
+}
+
+.predictionLabel {
+  font-size: 0.9rem;
+  color: #718096;
+  margin: 0.5rem 0 1rem 0;
+}
+
+.predictionDetails {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.trendIndicator {
+  background: #e2e8f0;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.predictionConfidence {
+  background: #e2e8f0;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.growthMetrics {
+  text-align: center;
+}
+
+.growthValue {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #48bb78;
+  line-height: 1;
+}
+
+.growthLabel {
+  font-size: 0.9rem;
+  color: #718096;
+  margin: 0.5rem 0 1rem 0;
+}
+
+.growthTrajectory {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #e2e8f0;
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  font-weight: 500;
+}
+
+.trajectoryIcon {
+  font-size: 1.2rem;
+}
+
+.focusMetric {
+  text-align: center;
+}
+
+.focusScore {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ed8936;
+  line-height: 1;
+}
+
+.focusLabel {
+  font-size: 0.9rem;
+  color: #718096;
+  margin: 0.5rem 0 1rem 0;
+}
+
+.focusDescription {
+  font-size: 0.9rem;
+  color: #4a5568;
+  line-height: 1.4;
+}
+
+.patternAnalysis {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.patternItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background: white;
+  border-radius: 6px;
+}
+
+.patternLabel {
+  color: #718096;
+  font-size: 0.9rem;
+}
+
+.patternValue {
+  color: #2d3748;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* New Welcome Section Styles */
+.welcomeSection {
+  padding: 2rem 0;
+}
+
+.welcomeContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.aiIntro {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+}
+
+.aiIcon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.aiIntro h1 {
+  margin: 0 0 1rem 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.aiDescription {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  opacity: 0.95;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.featureCard {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.featureCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+}
+
+.featureIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.featureCard h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.featureCard p {
+  margin: 0;
+  color: #718096;
+  line-height: 1.5;
+}
+
+.getStartedSection {
+  display: flex;
+  justify-content: center;
+}
+
+.emptyStateCard {
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+}
+
+.emptyStateCard .emptyIcon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.emptyStateCard h3 {
+  color: #2d3748;
+  margin: 0 0 1rem 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.emptyStateCard p {
+  color: #718096;
+  margin: 0 0 2rem 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.actionButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.startButton {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3);
+  width: 100%;
+  max-width: 300px;
+}
+
+.startButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+}
+
+.learnMoreButton {
+  background: transparent;
+  color: #667eea;
+  border: 2px solid #667eea;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+}
+
+.learnMoreButton:hover {
+  background: #667eea;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .welcomeContent {
+    padding: 0 1rem;
+  }
+  
+  .aiIntro {
+    padding: 2rem 1rem;
+  }
+  
+  .aiIntro h1 {
+    font-size: 2rem;
+  }
+  
+  .aiDescription {
+    font-size: 1rem;
+  }
+  
+  .featuresGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .featureCard {
+    padding: 1.5rem;
+  }
+  
+  .emptyStateCard {
+    padding: 2rem 1.5rem;
+  }
+  
+  .actionButtons {
+    gap: 0.75rem;
+  }
+  
+  .header {
+    padding: 1.5rem;
+  }
+  
+  .header h2 {
+    font-size: 2rem;
+  }
+  
+  .metricsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .primaryCard {
+    grid-column: span 1;
+  }
+  
+  .recommendationsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .insightsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tabNavigation {
+    padding: 0.25rem;
+  }
+  
+  .tabButton {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    min-width: 120px;
+  }
+  
+  .tabContainer {
+    padding: 1rem;
+  }
+  
+  .predictionDetails {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
